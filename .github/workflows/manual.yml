@@ -34,11 +34,11 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v4
 
-    - name: update readme
-      run: sed -i "s|hello|${{ secrets.GREETING }}|" README.md
+    - name: update file
+      run: sed -i "s|hello|${{ secrets.GREETING }}|" Dockerfile
 
-    - name: show README.md
+    - name: show file
       run: |
-        cat README.md
+        cat Dockerfile
       
     
