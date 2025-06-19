@@ -30,3 +30,15 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ inputs.name }}"
+
+    - name: checkout repo
+      uses: actions/checkout@v4
+
+    - name: update readme
+      run: sed -i "s|greeting|secrets|${{ secrets.GREETING }}" README.md
+
+    - name: show README.md
+      run: |
+        cat README.md
+      
+    
