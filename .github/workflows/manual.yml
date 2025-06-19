@@ -35,7 +35,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: update readme
-      run: sed -i "s|greeting|${{ secrets.GREETING }}|" README.md
+      run: sed -i "s|hello|${{ secrets.GREETING }}|" README.md
 
     - name: show README.md
       run: |
