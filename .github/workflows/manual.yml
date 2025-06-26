@@ -19,7 +19,7 @@ on:
         type: string
 
 env:
-  DO_THIS: nottrue
+  DO_THIS: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -32,7 +32,7 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      if: ${{ env.DO_THIS == 'true' }}
+      if: ${{ env.DO_THIS == 'true' ||  inputs.name == 'this' || inputs.name == 'that' }}
       run: echo "Hello ${{ inputs.name }}"
 
     - name: checkout repo
