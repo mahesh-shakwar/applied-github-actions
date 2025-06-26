@@ -19,7 +19,7 @@ on:
         type: string
 
 env:
-  DO_THIS: true
+  DO_THIS: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
