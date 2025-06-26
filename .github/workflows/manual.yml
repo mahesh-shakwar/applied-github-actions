@@ -18,6 +18,9 @@ on:
         # The data type of the input
         type: string
 
+env:
+  DO_THIS: true
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
@@ -29,6 +32,7 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
+      if: ${{ env.DO_THIS == 'true' }}
       run: echo "Hello ${{ inputs.name }}"
 
     - name: checkout repo
